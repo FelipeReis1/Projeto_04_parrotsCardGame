@@ -1,0 +1,83 @@
+.body {
+  font-family: "Roboto", sans-serif;
+}
+
+.containerPrincipal {
+  width: 1110px;
+  height: 629px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eef9bf;
+  margin-left: auto;
+  margin-right: auto;
+}
+.titulo {
+  width: 1110px;
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 66px;
+  letter-spacing: -0.004em;
+
+  color: #75b79e;
+}
+.containerCartas {
+  display: flex;
+  margin-left: 122px;
+  margin-right: 116px;
+  flex-wrap: wrap;
+}
+.cartaFrente {
+  width: 117px;
+  height: 146px;
+  background-color: #a7e9af;
+  border: 1px solid #99cea8;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.escondido {
+  display: none;
+}
+
+/*Css mobile*/
+
+@media (max-width: 335px) {
+  .containerPrincipal {
+    width: 100%;
+    height: 100%;
+  }
+  .titulo {
+    width: 100%;
+  }
+  p {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.004em;
+  }
+  .containerCartas {
+    justify-content: center;
+  }
+  .cartaFrente {
+    margin-left: 0px;
+  }
+}
