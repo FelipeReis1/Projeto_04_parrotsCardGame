@@ -2,6 +2,7 @@ let quantidadeCartasSelecionada;
 let numeroJogadas = 0;
 let primeiraCarta = "";
 let segundaCarta = "";
+let bloquearClique;
 let meuContainerCartas = document.querySelector(".containerCartas");
 let meusGifs = [
   "./imagens/bobrossparrot.gif",
@@ -44,6 +45,10 @@ function iniciar() {
 }
 
 function virarCarta(elemento) {
+  bloquearClique = document.querySelector(".containerCartas");
+  if (bloquearClique.classList.contains("bloquear")) {
+    return;
+  }
   if (primeiraCarta === "") {
     primeiraCarta = elemento;
     elemento.classList.add("virar");
@@ -61,12 +66,14 @@ function virarCarta(elemento) {
       )
         setTimeout(finalizaJogo, 1000);
     } else {
+      bloquearClique.classList.add("bloquear");
       setTimeout(comparaCartas, 1000);
     }
   }
 }
 
 function comparaCartas() {
+  bloquearClique.classList.remove("bloquear");
   primeiraCarta.classList.remove("virar");
   segundaCarta.classList.remove("virar");
   primeiraCarta = "";
@@ -75,4 +82,6 @@ function comparaCartas() {
 
 function finalizaJogo() {
   alert(`Parabéns, você ganhou o jogo com: ${numeroJogadas} jogadas!`);
+  quantidadeCartasSelecionada = 0;
+  window.location.reload();
 }
